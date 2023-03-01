@@ -3,7 +3,7 @@ import re
 
 def process_line(line):
     try:
-        properties = re.match(r"(.+) - - \[(.+)\] \"(.+)\" (.+) (.+)", line)
+        properties = re.match(r"(.+) - - \[(.+) \"(.+)\" (.+) (.+)", line)
         return [properties[1], properties[2], properties[3], properties[4], properties[5]]
     except Exception:
         raise Exception('Wrong line!')
