@@ -22,3 +22,10 @@ def get_path_of_request(line):
         return request
 
     return split_request[1].strip()
+
+
+def filter_and_print(file, filter_function):
+    for line in file:
+        if filter_function(line):
+            print(line.strip())
+    file.close()

@@ -1,5 +1,5 @@
 import sys
-from utils import get_property_by_index
+from utils import get_property_by_index, filter_and_print
 
 
 def is_from_poland(line):
@@ -9,13 +9,5 @@ def is_from_poland(line):
     return domain == 'pl'
 
 
-def print_from_poland():
-    for line in sys.stdin:
-        if is_from_poland(line):
-            print(line.strip())
-
-    sys.stdin.close()
-
-
 if __name__ == "__main__":
-    print_from_poland()
+    filter_and_print(sys.stdin, is_from_poland)

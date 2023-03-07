@@ -1,5 +1,5 @@
 import sys
-from utils import get_property_by_index
+from utils import get_property_by_index, filter_and_print
 
 
 def is_from_22_to_6(line):
@@ -9,13 +9,5 @@ def is_from_22_to_6(line):
     return hour >= 22 or hour < 6
 
 
-def print_only_between_22_6():
-    for line in sys.stdin:
-        if is_from_22_to_6(line):
-            print(line.strip())
-
-    sys.stdin.close()
-
-
 if __name__ == "__main__":
-    print_only_between_22_6()
+    filter_and_print(sys.stdin, is_from_22_to_6)

@@ -1,6 +1,6 @@
 import sys
 import datetime
-from utils import get_property_by_index
+from utils import get_property_by_index, filter_and_print
 
 
 def is_from_friday(line):
@@ -10,13 +10,5 @@ def is_from_friday(line):
     return day_of_week == 4
 
 
-def print_friday_requests():
-    for line in sys.stdin:
-        if is_from_friday(line):
-            print(line.strip())
-
-    sys.stdin.close()
-
-
 if __name__ == "__main__":
-    print_friday_requests()
+    filter_and_print(sys.stdin, is_from_friday)
