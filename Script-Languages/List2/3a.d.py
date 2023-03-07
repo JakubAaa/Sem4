@@ -2,20 +2,9 @@ import sys
 from utils import get_path_of_request
 
 
-def is_gif(value):
-    return value == 'gif'
-
-
-def is_jpg(value):
-    return value == 'jpg'
-
-
-def is_jpeg(value):
-    return value == 'jpeg'
-
-
-def is_xbm(value):
-    return value == 'xbm'
+def is_image(value):
+    image_extensions = ['gif', 'jpg', 'jpeg', 'xbm']
+    return value in image_extensions
 
 
 def find_ratio(lines):
@@ -28,7 +17,7 @@ def find_ratio(lines):
         split_request = path.split('.')
         if len(split_request) > 1:
             extension = split_request[1].strip()
-            if is_gif(extension) or is_jpg(extension) or is_jpeg(extension) or is_xbm(extension):
+            if is_image(extension):
                 graphics += 1
 
     return graphics / quantity
