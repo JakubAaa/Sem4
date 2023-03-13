@@ -10,5 +10,9 @@ def is_from_friday(line):
     return day_of_week == 4
 
 
-if __name__ == "__main__":
+def print_friday_requests():
     filter_and_print(sys.stdin, is_from_friday)
+
+
+if __name__ == "__main__":
+    print_friday_requests()

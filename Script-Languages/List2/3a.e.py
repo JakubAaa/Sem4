@@ -7,5 +7,9 @@ def is_200(line):
     return code == '200'
 
 
-if __name__ == "__main__":
+def print_all_with_code_200():
     filter_and_print(sys.stdin, is_200)
+
+
+if __name__ == "__main__":
+    print_all_with_code_200()

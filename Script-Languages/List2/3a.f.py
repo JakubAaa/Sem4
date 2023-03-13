@@ -9,5 +9,9 @@ def is_from_22_to_6(line):
     return hour >= 22 or hour < 6
 
 
-if __name__ == "__main__":
+def print_only_between_22_6():
     filter_and_print(sys.stdin, is_from_22_to_6)
+
+
+if __name__ == "__main__":
+    print_only_between_22_6()

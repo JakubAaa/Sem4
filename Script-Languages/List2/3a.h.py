@@ -9,5 +9,9 @@ def is_from_poland(line):
     return domain == 'pl'
 
 
-if __name__ == "__main__":
+def print_from_poland():
     filter_and_print(sys.stdin, is_from_poland)
+
+
+if __name__ == "__main__":
+    print_from_poland()
